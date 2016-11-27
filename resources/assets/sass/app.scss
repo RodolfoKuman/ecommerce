@@ -1,0 +1,77 @@
+// Variables
+@import "variables";
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.big-padding{
+  padding: 30px;
+}
+
+.padding{
+  padding: 0px;
+}
+
+.no-transform{
+  text-transform: none;
+}
+
+.margin{
+  margin: 0px;
+}
+
+.blue-grey{
+  background-color: #37474f;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.white-text{
+  color:white;
+}
+
+.red-text{
+  color:rgb(200,50,50);
+}
+
+.white{
+  background-color: white;
+}
+
+.table{
+  background-color: white;
+}
+
+.navbar{
+  margin-bottom: 0px;
+}
+
+.floating{
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 2;
+}
+
+.product{
+  width: 600px;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+  h1{
+    padding-bottom: 10px;
+    border-bottom: solid 1px;
+  }
+  .actions{
+    right: 1em;
+    top: 10px;
+  }
+}
