@@ -13,8 +13,14 @@
 
 Route::get('/','MainController@home');
 
+Route::get('/carrito','ShoppingCartsController@index');
+
 Auth::routes();
 
 Route::resource('products','ProductsController');
+
+Route::resource('in_shopping_carts','InShoppingCartsController',[
+  'only' => ['store','destroy']
+]);
 
 Route::get('/home', 'HomeController@index');

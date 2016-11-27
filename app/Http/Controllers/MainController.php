@@ -8,6 +8,6 @@ use App\Http\Requests;
 class MainController extends Controller
 {
     public function home(){
-      return view('main.home',["name" => "Rodolfo"]);
+      return view('main.home');
     }
 }
