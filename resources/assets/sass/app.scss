@@ -18,12 +18,20 @@
   padding: 0px;
 }
 
+.large-padding{
+  padding: 10px 15px;
+}
+
 .no-transform{
   text-transform: none;
 }
 
 .margin{
   margin: 0px;
+}
+
+.top-space{
+  margin-top: 1em;
 }
 
 .blue-grey{
@@ -74,4 +82,10 @@
     right: 1em;
     top: 10px;
   }
+}
+
+//status order
+
+.creado{
+  background-color: #d4e157;
 }

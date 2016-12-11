@@ -9,6 +9,24 @@ class ShoppingCart extends Model
 
   protected $fillable = ["status"];
 
+  public function approve(){
+    $this->updateCustomIDAndStatus();
+  }
+
+  public function generateCustomID(){
+    return md5("$this->id $this->updated_at");
+  }
+
+  public function updateCustomIDAndStatus(){
+    $this->status = "approved";
+    $this->customid = $this->generateCustomID();
+    $this->save();
+  }
+
+  public function order(){
+    return $this->hasOne("App\Order")->first();
+  }
+
   public function inShoppingCarts(){
     return $this->hasMany("App\InShoppingCart");
   }
@@ -24,6 +42,12 @@ class ShoppingCart extends Model
   public function total(){
     return $this->products()->sum("pricing");
   }
+
+  public function totalUSD(){
+    return $this->products()->sum("pricing")/100;
+  }
+
+
 
     public static function findOrCreateBySessionID($shopping_cart_id)
     {
