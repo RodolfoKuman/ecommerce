@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
+
+  public function __construct(){
+    $this->middleware("auth",["except" => "show"]);//autenticacion excepto para ver los productos
+  }
+
     /**
      * Display a listing of the resource.
      *

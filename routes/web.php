@@ -28,4 +28,8 @@ Route::resource('compras','ShoppingCartsController',[
   'only' => ['show']
 ]);
 
+Route::resource('orders','OrdersController',[
+  'only' => ['index','update']
+]);
+
 Route::get('/home', 'HomeController@index');
