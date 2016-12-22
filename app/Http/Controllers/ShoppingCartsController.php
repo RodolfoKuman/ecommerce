@@ -14,6 +14,7 @@ class ShoppingCartsController extends Controller
     $this->middleware("shoppingcart");
   }
 
+
     public function show($id){
       $shopping_cart = ShoppingCart::where('customid',$id)->first();
 
@@ -22,18 +23,22 @@ class ShoppingCartsController extends Controller
       return view("shopping_carts.completed",["shopping_cart" => $shopping_cart, "order" => $order]);
     }
 
-    public function index(Request $request)
-    {
+    public function checkout(Request $request){
 
-    $shopping_cart = $request->shopping_cart;
+      $shopping_cart = $request->shopping_cart;
 
       $paypal = new Paypal($shopping_cart);
 
       $payment = $paypal->generate();
 
       return redirect($payment->getApprovalLink());
+    }
 
-       $products = $shopping_cart->products()->get();
+    public function index(Request $request)
+    {
+        $shopping_cart = $request->shopping_cart;
+
+        $products = $shopping_cart->products()->get();
 
         $total = $shopping_cart->total();
 

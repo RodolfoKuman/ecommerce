@@ -6,6 +6,12 @@
   margin: 0;
 }
 
+.circle-shopping-cart{
+  background-color: #232980;
+  border-radius: 50%;
+  padding: 1em 1em;
+}
+
 .absolute{
   position: absolute;
 }
@@ -95,8 +101,46 @@
   }
 }
 
+.product-avatar{
+  max-width: 150px;
+  height: 200px;
+}
+
+.products-container{
+  .product{
+    margin-top: 3em;
+  }
+}
+
 //status order
 
 .creado{
   background-color: #d4e157;
 }
+
+//animaciones
+
+.highlight{
+  -webkit-animation: highlight 1.5s;
+  animation: highlight 1.5s;
+}
+
+@-webkit-keyframes highlight{
+  50%{
+    background-color: #ffff00;
+    color:black;
+  }
+  100%{
+    background-color: inherit;
+  }
+}
+
+  @keyframes highlight{
+    50%{
+      background-color: #ffff00;
+      color:black;
+    }
+    100%{
+      background-color: inherit;
+    }
+  }
