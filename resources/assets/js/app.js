@@ -39,7 +39,7 @@ $(document).ready(function(){
       },
       error:function(err){
         console.log(err);
-        button.css("background-color","#d50000").val("Error al agregar producto");
+        button.css("background-color","#d4002a").val("Error al agregar producto");
 
         setTimeout(function(){
           restartButton(button);

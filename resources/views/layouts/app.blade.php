@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Kuman store') }}</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
     <link href="{{ url('/css/app.css')}}" rel="stylesheet">
+    <link href="{{ url('/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -27,7 +28,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-inverse navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-default  navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -41,21 +42,25 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Productos Kuman
+                        Librerias shakespeare
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a>Novedades</a></li>
+                        <li><a>Categorias</a></li>
+                        <li><a>Promociones</a></li>
+                        <li><a>Articulos</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li>
-                          <a href="{{ url('carrito') }}">  Mi carrito
+                          <a class="fa fa-shopping-cart" href="{{ url('carrito') }}">  Mi carrito
+
                             <span class="circle-shopping-cart" >
                               {{$productsCount}}
                             </span></a>
@@ -80,9 +85,52 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
+
     </div>
+
+    <footer class="container-fluid">
+   		<div class="col-xs-12 col-sm-3 col-md-3" id="social-media">
+   			<h3>Siguenos en</h3>
+   			<ul>
+   				<li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+   				<li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+   				<li><i class="fa fa-youtube" aria-hidden="true"></i></li>
+   			</ul>
+   		</div>
+   		<div class="col-xs-12 col-sm-3 col-md-3" id="sitemap">
+   			<h3>Sitemap</h3>
+   			<ul>
+   				<li><a href=""></a>Inicio</li>
+   				<li><a href=""></a>Novedades</li>
+   				<li><a href=""></a>Promociones</li>
+   				<li><a href=""></a>Categorias</li>
+   				<li><a href=""></a>Accesorios</li>
+   			</ul>
+   		</div>
+   		<div class="col-xs-12 col-sm-3 col-md-3" id="sucursales">
+   			<h3>Sucursales</h3>
+   			<ul>
+   				<li>Cancún</li>
+   				<li>Monterrey</li>
+   				<li>Guadalajara</li>
+   				<li>Acapulco</li>
+   				<li>Morelia</li>
+   			</ul>
+   		</div>
+   		<div class="col-xs-12 col-sm-3 col-md-3" id="credit-card">
+   			<h3>Formas de pago</h3>
+   			<ul>
+   				<li><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+   				<li><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+   				<li><i class="fa fa-cc-paypal" aria-hidden="true"></i></li>
+   			</ul>
+   		</div>
+      <div>
+        <p> Librerias shakespeare  | Todos los derechos reservados 2016</p>
+      </div>
+   </footer>
+
 
     <!-- Scripts -->
     <script

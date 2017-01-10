@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function home(){
 
-      $products = Product::latest()->paginate(20);
+      $products = Product::latest()->paginate(6);
 
       return view('main.home', ["products" => $products]);
     }

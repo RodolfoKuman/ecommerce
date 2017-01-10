@@ -3,10 +3,21 @@
   margin: 0;
 }
 
+.navbar-inverse {
+  position: fixed !important;
+  background-color: #1B2785 !important;
+}
+
+.btn-success {
+  background-color: #0070B5 !important;
+}
+
 .circle-shopping-cart {
+  position: relative;
   background-color: #232980;
   border-radius: 50%;
-  padding: 1em 1em;
+  padding: .5em .5em;
+  width: 60px !important;
 }
 
 .absolute {
@@ -29,12 +40,40 @@
   text-transform: none;
 }
 
+.slider-home img {
+  width: 100%;
+  max-height: 230px;
+}
+
+#header-home {
+  text-align: center;
+}
+
+.precio-libro {
+  color: #226CF3;
+  font-size: 1.5em;
+}
+
+hr {
+  border-color: black;
+}
+
 .margin {
   margin: 0px;
 }
 
 .top-space {
   margin-top: 1em;
+}
+
+.margin-top {
+  position: relative;
+  margin-top: 120px;
+}
+
+.margin-top-short {
+  position: relative;
+  margin-top: 60px;
 }
 
 .blue-grey {
@@ -62,7 +101,7 @@
 }
 
 .navbar {
-  margin-bottom: 0px;
+  margin-bottom: 100px !important;
 }
 
 .floating {
@@ -102,16 +141,72 @@
 }
 
 .product-avatar {
-  max-width: 150px;
-  height: 200px;
+  max-width: 100px;
+  height: 150px;
 }
 
 .products-container .product {
   margin-top: 3em;
 }
 
+#product-description {
+  left: 10px;
+  right: 20px;
+  padding-right: 10px;
+  font-size: 1.1em;
+}
+
 .creado {
   background-color: #d4e157;
+}
+
+footer {
+  position: relative;
+  background-color: #113A52;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  color: #EEEEEE;
+}
+
+footer div {
+  position: relative;
+  display: inline-block;
+}
+
+footer ul li {
+  position: relative;
+  display: inline-block;
+}
+
+footer #sitemap ul li, footer #sucursales ul li {
+  position: relative;
+  display: block;
+}
+
+footer #social-media ul li i {
+  position: relative;
+  font-size: 1.5em !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  padding: .5em .5em;
+  top: -15px;
+  margin-top: 30px;
+  color: black !important;
+}
+
+footer #social-media ul li {
+  margin-left: 15px;
+}
+
+footer #credit-card ul li i {
+  position: relative;
+  font-size: 1.8em;
+  width: 40px;
+  height: 40px;
+  top: -15px;
+  margin-top: 30px;
 }
 
 .highlight {
@@ -136,6 +231,12 @@
   }
   100% {
     background-color: inherit;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    text-align: center !important;
   }
 }
 

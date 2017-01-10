@@ -4,20 +4,23 @@
       <a href="{{url('/products/'.$product->id.'/edit')}}" class="">Editar</a>
         @include('products.delete', [ 'product' => $product])
     </div>
+
+
   @endif
-  <h1>{{$product->title}}</h1>
+  <h4>{{$product->title}}</h4>
   <div class="row">
-    <div class="col-sm-6 col-xs-12">
+    <div class="col-xs-12 col-sm-4 ">
       @if($product->extension)
         <img src="{{ url("/products/images/$product->id.$product->extension")}}" class="product-avatar" alt="">
       @endif
     </div>
-    <div class="col-sm-6 col-xs-12">
+    <div id="product-description" class="col-xs-12 col-sm-8 ">
       <p><strong>Descripción</strong></p>
       <p>{{$product->description}}</p>
-      <p>
-        @include("in_shopping_carts.form", ["product" => $product])
-      </p>
     </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+    <p class="precio-libro">{{$product->pricing}}</p>
+    @include("in_shopping_carts.form", ["product" => $product])
   </div>
 </div>
