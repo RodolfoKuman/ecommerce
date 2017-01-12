@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
     <link href="{{ url('/css/app.css')}}" rel="stylesheet">
-    <link href="{{ url('/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{ url('/css/font-awesome.css')}}" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -59,7 +59,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li>
-                          <a class="fa fa-shopping-cart" href="{{ url('carrito') }}">  Mi carrito
+                          <a class="fa fa-shopping-cart" href="{{ url('carrito') }}">
 
                             <span class="circle-shopping-cart" >
                               {{$productsCount}}
@@ -90,7 +90,7 @@
     </div>
 
     <footer class="container-fluid">
-   		<div class="col-xs-12 col-sm-3 col-md-3" id="social-media">
+   		<div class="col-xs-12 col-sm-6 col-md-3" id="social-media">
    			<h3>Siguenos en</h3>
    			<ul>
    				<li><i class="fa fa-facebook" aria-hidden="true"></i></li>
@@ -98,7 +98,7 @@
    				<li><i class="fa fa-youtube" aria-hidden="true"></i></li>
    			</ul>
    		</div>
-   		<div class="col-xs-12 col-sm-3 col-md-3" id="sitemap">
+   		<div class="col-xs-12 col-sm-6 col-md-3" id="sitemap">
    			<h3>Sitemap</h3>
    			<ul>
    				<li><a href=""></a>Inicio</li>
@@ -108,7 +108,7 @@
    				<li><a href=""></a>Accesorios</li>
    			</ul>
    		</div>
-   		<div class="col-xs-12 col-sm-3 col-md-3" id="sucursales">
+   		<div class="col-xs-12 col-sm-6 col-md-3" id="sucursales">
    			<h3>Sucursales</h3>
    			<ul>
    				<li>Cancún</li>

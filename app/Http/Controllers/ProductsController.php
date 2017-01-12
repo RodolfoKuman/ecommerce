@@ -52,6 +52,7 @@ class ProductsController extends Controller
         $product->title = $request->title;
         $product->description = $request->description;
         $product->pricing = $request->pricing;
+        $product->category = $request->category;
 
         $product->user_id = Auth::user()->id;
 
@@ -115,6 +116,7 @@ class ProductsController extends Controller
       $product->title = $request->title;
       $product->description = $request->description;
       $product->pricing = $request->pricing;
+      $product->category = $request->category;
 
       if($hasFile){
         $extension = $request->cover->extension();

@@ -10,8 +10,16 @@ class MainController extends Controller
 {
     public function home(){
 
-      $products = Product::latest()->paginate(6);
+      $products = Product::latest()->paginate(8);
 
       return view('main.home', ["products" => $products]);
     }
+
+    public function categories(){
+
+      $productCategory = Product::where('category', 'infantil')->get();
+
+      return view('categories.index', ["products" => $productCategory]);
+    }
+
 }

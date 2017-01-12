@@ -1,4 +1,4 @@
-<div class="card product text-left">
+<div class=" product text-left">
   @if(Auth::check() && $product->user_id == Auth::user()->id )
     <div class="absolute actions">
       <a href="{{url('/products/'.$product->id.'/edit')}}" class="">Editar</a>
@@ -7,19 +7,21 @@
 
 
   @endif
-  <h4>{{$product->title}}</h4>
+
   <div class="row">
-    <div class="col-xs-12 col-sm-4 ">
+    <div class="col-xs-12 col-sm-12 col-md-12 text-center book-img-title">
       @if($product->extension)
+
         <img src="{{ url("/products/images/$product->id.$product->extension")}}" class="product-avatar" alt="">
       @endif
+      <h4 class="text-center title-book">{{$product->title}}</h4>
     </div>
-    <div id="product-description" class="col-xs-12 col-sm-8 ">
-      <p><strong>Descripción</strong></p>
-      <p>{{$product->description}}</p>
+    <div class="img-info">
+      <a href="#">Más informacion</a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+
     <p class="precio-libro">{{$product->pricing}}</p>
     @include("in_shopping_carts.form", ["product" => $product])
   </div>

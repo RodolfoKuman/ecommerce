@@ -13,6 +13,8 @@
 //REST
 Route::get('/','MainController@home');
 
+Route::get('/Categories', 'MainController@categories');
+
 Route::get('/carrito','ShoppingCartsController@index');
 
 Route::post('/carrito','ShoppingCartsController@checkout');

@@ -18,7 +18,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="/img/banner1.jpg" alt="...">
+          <img src="img/banner1.jpg" alt="...">
           <div class="carousel-caption">
 
           </div>
@@ -51,18 +51,42 @@
   </div>
 
 <!-- seccion de productos -->
-  <div id="header-home" class="container">
-    <h2>Libros más populares</h2>
-    <hr>
-  </div>
-  <div class="container text-center products-container">
-    @foreach($products as  $product)
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        @include('products.product',["products" => $product])
+<div class="container">
+    <div id="header-home" class="card">
+      <h2>Libros más populares</h2>
+
+      <div class="border-separator">a</div>
+
+    <div class=" text-center products-container">
+      @foreach($products as  $product)
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          @include('products.product',["products" => $product])
+        </div>
+      @endforeach
+      <div class="">
+        {{$products->render()}}
       </div>
-    @endforeach
-    <div class="">
-      {{$products->render()}}
     </div>
   </div>
-@endsection
+</div>
+
+<div class="container">
+    <div class=" col-md-7 recomended">
+      <h3>Lo + leido</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+<!-- eventos -->
+  <div class=" col-md-4 col-md-offset-1 next-event">
+  <div class="panel panel-default">
+
+    <img src="img/feria-libro.jpg" alt="">
+    <div class="panel-body text-center">
+    <a class="text-center" href="#">Más información</a>
+    </div>
+  </div>
+
+    </div>
+</div>
+
+  @endsection

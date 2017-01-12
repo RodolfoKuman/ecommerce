@@ -12,7 +12,8 @@
           <td>Título</td>
           <td>Descripción</td>
           <td>Precio</td>
-          <td>Acciones</td>
+          <td>Categoria</td>
+          <td>Acciones</td>  
       </tr>
     </thead>
     <tbody>
@@ -22,7 +23,7 @@
           <td>{{ $product->title}}</td>
           <td>{{ $product->description}}</td>
           <td>{{ $product->pricing}}</td>
-
+          <td>{{ $product->category}}</td>
           <td>
             <a href="{{url("/products/$product->id")}}">Ver</a>
             <a href="{{url('/products/'.$product->id.'/edit')}}" class="">Editar</a>

@@ -11,6 +11,9 @@
     <div class="form-group">
       {{Form::textarea('description', $product->description,['class' => 'form-control','placeholder' =>'Descripcion del producto...','required' =>'true'])}}
     </div>
+    <div class="form-group">
+      {{Form::text('category', $product->category,['class' => 'form-control','placeholder' =>'Categoria del producto','required' =>'true'])}}
+    </div>
     <div class="form-group text-right">
       <a href="{{url('/products')}}">Regresar al listado de productos</a>
     </div>
