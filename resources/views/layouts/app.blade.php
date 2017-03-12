@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Kuman store') }}</title>
+    <title>{{ config('Librerias', 'Librerias Shakespeare ') }}</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -16,7 +16,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="{{ url('/css/app.css')}}" rel="stylesheet">
     <link href="{{ url('/css/font-awesome.css')}}" rel="stylesheet">
     <!-- Scripts -->
@@ -28,7 +28,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-inverse navbar-default  navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-default  navbar-fixed-top font-raleway">
             <div class="container">
                 <div class="navbar-header">
 
@@ -49,7 +49,6 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a>Novedades</a></li>
                         <li><a>Categorias</a></li>
                         <li><a>Promociones</a></li>
                         <li><a>Articulos</a></li>
@@ -67,8 +66,8 @@
                         </li>
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
+                        <li><a href="{{ url('/products') }}">Libros</a></li>
                         <li>
                             <a href="{{ url('/logout') }}"
                                 onclick="event.preventDefault();
@@ -89,7 +88,7 @@
 
     </div>
 
-    <footer class="container-fluid">
+    <footer class="container-fluid font-raleway">
    		<div class="col-xs-12 col-sm-6 col-md-3" id="social-media">
    			<h3>Siguenos en</h3>
    			<ul>
@@ -102,7 +101,6 @@
    			<h3>Sitemap</h3>
    			<ul>
    				<li><a href=""></a>Inicio</li>
-   				<li><a href=""></a>Novedades</li>
    				<li><a href=""></a>Promociones</li>
    				<li><a href=""></a>Categorias</li>
    				<li><a href=""></a>Accesorios</li>
