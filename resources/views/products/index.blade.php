@@ -13,21 +13,23 @@
           <td>Descripción</td>
           <td>Precio</td>
           <td>Categoria</td>
-          <td>Acciones</td>  
+          <td>Acciones</td>
       </tr>
     </thead>
     <tbody>
       @foreach ($products as $product)
         <tr>
           <td>{{ $product->id}}</td>
-          <td>{{ $product->title}}</td>
+          <td class="text-success">{{ $product->title}}</td>
           <td>{{ $product->description}}</td>
           <td>{{ $product->pricing}}</td>
           <td>{{ $product->category}}</td>
           <td>
-            <a href="{{url("/products/$product->id")}}">Ver</a>
-            <a href="{{url('/products/'.$product->id.'/edit')}}" class="">Editar</a>
-            @include('products.delete', [ 'product' => $product])
+            <div style="width:200px;" class="">
+              <a href="{{url("/products/$product->id")}}">Ver</a>
+              <a href="{{url('/products/'.$product->id.'/edit')}}" class="">Editar</a>
+              @include('products.delete', [ 'product' => $product])
+            </div>
           </td>
 
         </tr>

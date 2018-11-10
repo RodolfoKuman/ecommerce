@@ -25,6 +25,8 @@ Auth::routes();
 
 Route::resource('products','ProductsController');
 
+Route::get('products/{id}/description','ProductsController@product_description');
+
 Route::resource('in_shopping_carts','InShoppingCartsController',[
   'only' => ['store','destroy']
 ]);

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -21,7 +22,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-      $products = Product::all();
+      $products = DB::table('products')->select()->orderBy('created_at','desc')->get();
         return view('products.index',["products" => $products]);
     }
 
@@ -86,6 +87,12 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         return view('products.show',['product' => $product]);
+    }
+
+    public function product_description($id)
+    {
+      $product = Product::find($id);
+      return view('products.description',['product' => $product]);
     }
 
     /**

@@ -17,7 +17,7 @@
       <h4 class="text-center title-book">{{$product->title}}</h4>
     </div>
     <div class="img-info">
-      <a href="#">Más informacion</a>
+      <a href="{{ url("/products/$product->id/description") }}">Más informacion</a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 text-center">

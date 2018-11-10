@@ -6,7 +6,7 @@
 @section('content')
 
   <!-- Carousel de ofertas  -->
-  <div class="container-fluid slider-home margin-top-short">
+  <div class="container-fluid slider-home">
     <div class="row">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -96,7 +96,7 @@
   <div class="panel panel-default">
 
     <img src="img/libros-frases.gif" alt="">
-    
+
   </div>
 
     </div>
