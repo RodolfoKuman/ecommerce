@@ -19,20 +19,25 @@ class PaymentsController extends Controller
 
     public function store(Request $request){
 
-      $shopping_cart = $request->shopping_cart;
 
-      $paypal = new PayPal($shopping_cart);
-      $response = $paypal->execute($request->paymentId, $request->PayerID);
+      try{
+        $shopping_cart = $request->shopping_cart;
 
-      if($response->state == "approved"){
-        \Session::remove("shopping_cart_id");
-        $order = Order::createFromPayPalResponse($response,$shopping_cart);
-        $shopping_cart->approve();
+        $paypal = new PayPal($shopping_cart);
+        $response = $paypal->execute($request->paymentId, $request->PayerID);
+    
+        if($response->state == "approved"){
+          \Session::remove("shopping_cart_id");
+          $order = Order::createFromPayPalResponse($response,$shopping_cart);
+          $shopping_cart->approve();
+        }
 
-        
+        return view("shopping_carts.completed",["shopping_cart" => $shopping_cart, "order" => $order]);
+
+      }catch(\Exception $ex){
+        dd($ex);
+        exit(1);
       }
-
-      return view("shopping_carts.completed",["shopping_cart" => $shopping_cart, "order" => $order]);
 
       //dd($order);
     }
