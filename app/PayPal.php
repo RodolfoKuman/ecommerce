@@ -50,8 +50,8 @@ class PayPal
     }
 
     public function amount(){
-      return \PaypalPayment::amount()->setCurrency("USD")
-                           ->setTotal($this->shopping_cart->totalUSD());
+      return \PaypalPayment::amount()->setCurrency("MXN")
+                           ->setTotal($this->shopping_cart->total());
     }
 
     public function items(){
@@ -76,8 +76,6 @@ class PayPal
     public function execute($paymentId , $payerId){
       $payment = \PaypalPayment::getById($paymentId, $this->_apiContext);
       $execution = \PaypalPayment::PaymentExecution()->setPayerId($payerId);
-
-      //$payment->execute($execution, $this->_apiContext);
 
       return $payment->execute($execution, $this->_apiContext);
     }

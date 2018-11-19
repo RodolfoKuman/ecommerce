@@ -23,7 +23,8 @@ class OrdersController extends Controller
     {
         $orders = Order::latest()->get();
 
-        $totalMonth = Order::totalMonthCount();
+        $totalMonth = Order::totalMonth();
+        $totalMonth = number_format($totalMonth, 2);
         $totalMonthCount = Order::totalMonthCount();
 
         return view('orders.index', ['orders' => $orders, 'totalMonth' => $totalMonth, 'totalMonthCount' => $totalMonthCount]);

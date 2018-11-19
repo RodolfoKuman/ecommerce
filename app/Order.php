@@ -15,11 +15,11 @@ class Order extends Model
 
 
      public function sendMail(){
-       Mail::to("rodikuman@gmail.com")->send(new OrderCreated($this));
+       Mail::to($this->email)->send(new OrderCreated($this));
      }
 
      public function sendUpdateMail(){
-       Mail::to("rodikuman@gmail.com")->send(new OrderUpdated($this));
+       Mail::to($this->email)->send(new OrderUpdated($this));
      }
 
      public function shoppingCartID(){

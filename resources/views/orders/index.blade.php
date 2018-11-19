@@ -10,9 +10,9 @@
     <div class="panel-body">
       <h3>Estadisticas</h3>
       <div class="row top-space">
-        <div class="col-xs-4 col-md-3 col-lg-2 sale-data">
-          <span>{{$totalMonth}}USD</span>
-          Ingresos de mes
+        <div class="col-xs-4 col-md-4 col-lg-4 sale-data">
+          <span>${{$totalMonth}} MXN</span>
+          Ingresos del mes
         </div>
         <div class="col-xs-4 col-md-3 col-lg-2 sale-data">
           <span>{{$totalMonthCount}}</span>
@@ -26,10 +26,12 @@
             <td>ID venta</td>
             <td>Comprador</td>
             <td>Dirección</td>
+            <td>Ciudad</td>
+            <td>Estado</td>
             <td>No. guia</td>
             <td>Status</td>
+            <td>total</td>
             <td>Fecha de venta</td>
-            <td>Acciones</td>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,8 @@
               <td>{{$order->id}}</td>
               <td>{{$order->recipient_name}}</td>
               <td>{{$order->address() }}</td>
+              <td>{{$order->city}}</td>
+              <td>{{$order->state}}</td>
               <td>
                 <a href="#" data-type="text"
                             data-pk="{{$order->id}}"
@@ -56,8 +60,8 @@
                             data-name="status"
                             class="select-status"></a>
               </td>
+              <td> ${{$order->total}}</td>
               <td>{{$order->created_at}}</td>
-              <td>Acciones</td>
             </tr>
           @endforeach
         </tbody>

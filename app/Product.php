@@ -14,8 +14,8 @@ class Product extends Model
     public function paypalItem(){
       return \PaypalPayment::item()->setName($this->title)
                                   ->setDescription($this->description)
-                                  ->setCurrency('USD')
+                                  ->setCurrency('MXN')
                                   ->setQuantity(1)
-                                  ->setPrice($this->pricing / 100);
+                                  ->setPrice($this->pricing);
     }
 }
